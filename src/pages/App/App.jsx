@@ -4,7 +4,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { refreshUser } from "../../redux/auth/operations";
 
 import Layout from "../../components/Layout/Layout";
-import PrivateRoute from "../../components/PrivatRoute/PrivateRoute";
 import RestrictedRoute from "../../components/RestrictedRoute/RestrictedRoute";
 
 const HomePage = lazy(() => import("../HomePage/HomePage"));
@@ -46,10 +45,7 @@ export default function App() {
               element={<RestrictedRoute component={<LoginPage />} />}
             />
 
-            <Route
-              path="contacts"
-              element={<PrivateRoute component={<GalleryPage />} />}
-            />
+            <Route path="contacts" element={<GalleryPage />} />
 
             <Route path="*" element={<NotFoundPage />} />
           </Route>

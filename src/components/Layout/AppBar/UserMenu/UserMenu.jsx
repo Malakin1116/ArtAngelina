@@ -5,8 +5,6 @@ import css from "./UserMenu.module.css";
 export default function UserMenu() {
   const dispatch = useDispatch();
 
-  const userName = useSelector((state) => state.auth.user.name);
-
   const onLogout = () => {
     dispatch(logout());
   };
