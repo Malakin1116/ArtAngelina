@@ -1,0 +1,49 @@
+.contactItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contactItem:hover {
+  background-color: #f1f1f1;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+}
+
+.contactName {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  margin-right: 10px;
+}
+
+.contactNumber {
+  font-size: 14px;
+  color: #666;
+  margin-right: auto;
+}
+
+.deleteButton {
+  padding: 5px 10px;
+  font-size: 14px;
+  color: white;
+  background-color: #ff4d4f;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.deleteButton:hover {
+  background-color: #ff7875;
+}
+
+.deleteButton:focus {
+  outline: none;
+  box-shadow: 0 0 5px rgba(255, 77, 79, 0.5);
+}
