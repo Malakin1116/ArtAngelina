@@ -1,25 +1,29 @@
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 20px;
+  padding-right: 30px;
+  padding-left: 30px;
+  background: #efe5da;
+  display: flex;
+  flex-direction: column;
 }
 
 .title {
   text-align: center;
-  font-size: 2.5rem;
+  font-size: 2.5rem; /* Размер текста */
   font-weight: bold;
-  color: #ff4b5c;
+  color: #624f3a; /* Сохраняем указанный цвет */
   margin-bottom: 20px;
+  display: inline-block; /* Для декоративных линий */
+  padding-bottom: 10px; /* Отступ для нижней линии */
+  margin-left: auto; /* Центрирование через auto */
+  margin-right: auto; /* Центрирование через auto */
 }
 
-/* Сетка с фиксированным минимальным размером */
 .grid {
   display: grid;
-  grid-template-columns: repeat(
-    auto-fill,
-    minmax(300px, 1fr)
-  ); /* Увеличиваем размер */
-  gap: 20px; /* Расстояние между карточками */
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
 }
 
 .card {
@@ -27,7 +31,7 @@
   overflow: hidden;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  height: 300px; /* Увеличиваем высоту карточек */
+  height: 300px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -40,44 +44,41 @@
 
 .image {
   width: 100%;
-  height: 100%; /* Заполняет весь контейнер */
-  object-fit: cover; /* Центрирует и обрезает изображение */
-  object-position: center; /* Центрует содержимое */
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
-/* Адаптивность для маленьких экранов (мобильные устройства) */
 @media (max-width: 600px) {
   .title {
-    font-size: 1.8rem; /* Уменьшаем размер заголовка */
+    font-size: 1.8rem;
   }
 
   .grid {
-    grid-template-columns: repeat(1, 1fr); /* 1 колонка для маленьких экранов */
+    grid-template-columns: repeat(1, 1fr);
   }
 
   .card {
-    height: 400px; /* Больше высота для мобильных */
+    height: 400px;
   }
 }
 
-/* Адаптивность для планшетов */
 @media (min-width: 600px) and (max-width: 900px) {
   .grid {
-    grid-template-columns: repeat(2, 1fr); /* 2 колонки для планшетов */
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .card {
-    height: 350px; /* Оптимальная высота для планшетов */
+    height: 350px;
   }
 }
 
-/* Адаптивность для компьютеров */
 @media (min-width: 900px) {
   .grid {
-    grid-template-columns: repeat(3, 1fr); /* 3 колонки для компьютеров */
+    grid-template-columns: repeat(3, 1fr);
   }
 
   .card {
-    height: 400px; /* Оптимальная высота для компьютеров */
+    height: 400px;
   }
 }
