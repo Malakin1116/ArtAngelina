@@ -4,35 +4,36 @@
   background: #efe5da;
   display: flex;
   flex-direction: column;
-  align-items: center; /* Центрируем содержимое по горизонтали */
-  padding-bottom: 50px;
+  align-items: center;
+  padding: 20px 15px 50px;
 }
 
 .title {
   text-align: center;
-  font-size: 4rem; /* Размер текста */
+  font-size: 3rem;
   font-weight: bold;
-  color: #624f3a; /* Сохраняем указанный цвет */
+  color: #624f3a;
+  margin-bottom: 20px;
 }
 
 .grid {
   display: flex;
-  flex-wrap: wrap; /* Перенос элементов на новые строки */
-  gap: 50px; /* Расстояние между карточками */
-  justify-content: center; /* Центрируем карточки */
-  width: 100%; /* Обеспечиваем равномерное заполнение */
+  flex-wrap: wrap;
+  gap: 50px;
+  justify-content: center;
+  width: 100%;
 }
 
 .card {
-  flex: 1 1 calc(33.33% - 20px); /* 3 карточки в строке */
-  max-width: calc(33.33% - 20px); /* Ограничиваем ширину */
+  flex: 1 1 calc(33.33% - 50px);
+  max-width: calc(33.33% - 50px);
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   height: 300px;
   display: flex;
-  align-items: center; /* Центрируем изображение внутри карточки */
+  align-items: center;
   justify-content: center;
 }
 
@@ -44,22 +45,18 @@
 .image {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Центрирует изображение */
-  object-position: center; /* Сохраняет пропорции */
+  object-fit: cover;
+  object-position: center;
 }
 
 /* Адаптивность для маленьких экранов (мобильные устройства) */
 @media (max-width: 600px) {
   .title {
-    font-size: 1.8rem;
-  }
-
-  .grid {
-    gap: 10px; /* Уменьшаем расстояние между карточками */
+    font-size: 2rem;
   }
 
   .card {
-    flex: 1 1 100%; /* Одна карточка на строку */
+    flex: 1 1 100%;
     max-width: 100%;
     height: 400px;
   }
@@ -68,8 +65,8 @@
 /* Адаптивность для планшетов */
 @media (min-width: 600px) and (max-width: 900px) {
   .card {
-    flex: 1 1 calc(50% - 20px); /* Две карточки в строке */
-    max-width: calc(50% - 20px);
+    flex: 1 1 calc(50% - 50px);
+    max-width: calc(50% - 50px);
     height: 350px;
   }
 }
@@ -77,8 +74,8 @@
 /* Адаптивность для компьютеров */
 @media (min-width: 900px) {
   .card {
-    flex: 1 1 calc(33.33% - 20px); /* Три карточки в строке */
-    max-width: calc(33.33% - 20px);
+    flex: 1 1 calc(33.33% - 50px);
+    max-width: calc(33.33% - 50px);
     height: 400px;
   }
 }

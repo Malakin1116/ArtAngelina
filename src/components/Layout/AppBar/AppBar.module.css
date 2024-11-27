@@ -21,7 +21,7 @@
   margin: 0;
   padding: 0;
   align-items: center;
-  gap: 75px; /* Большой gap по умолчанию */
+  gap: 25px; /* Большой gap по умолчанию */
 }
 
 /* Адаптивное уменьшение gap */
@@ -75,7 +75,7 @@ button:hover {
   position: relative;
   display: inline-block;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-  margin: 10px auto;
+  margin: 10px 100px;
   transition: all 0.3s ease-in-out;
 }
 
@@ -114,6 +114,14 @@ button:hover {
 
 /* Убираем полоски на планшетах */
 @media (min-width: 600px) and (max-width: 900px) {
+  .art_angelina {
+    margin-right: 50px;
+  }
+
+  ul {
+    gap: 25px;
+  }
+
   .art_angelina::before,
   .art_angelina::after {
     display: none; /* Убираем полоски */

@@ -13,7 +13,6 @@ export default function UserMenu() {
 
   return (
     <li className={css.userMenu}>
-      <span className={css.greeting}>Hello {userName || "Guest"}</span>
       <button onClick={onLogout} className={css.logoutButton}>
         Logout
       </button>
