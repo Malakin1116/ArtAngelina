@@ -1,9 +1,33 @@
+.authNav {
+  position: relative;
+}
+
+.burger {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #0033ff8a;
+}
+
 .ul {
   display: flex;
-  gap: 20px; /* Расстояние между элементами */
+  gap: 20px;
   list-style: none;
   padding: 0;
   margin: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease; /* Плавные переходы */
+  opacity: 0; /* Скрываем элементы по умолчанию */
+  transform: translateY(-10px); /* Смещение вверх */
+  pointer-events: none; /* Отключаем клики */
+}
+
+/* Скрыть меню для мобильных и планшетов */
+.menuOpen {
+  opacity: 1; /* Полностью видимые элементы */
+  transform: translateY(0); /* Возвращаем на место */
+  pointer-events: auto; /* Включаем клики */
 }
 
 .li {
@@ -12,47 +36,73 @@
 }
 
 .link {
-  font-size: 1rem; /* Размер шрифта */
+  font-size: 1rem;
   text-decoration: none;
-
-  color: #0033ff8a; /* Цвет текста */
-  padding: 10px 15px; /* Отступы внутри */
-  border-radius: 8px; /* Скругление углов */
+  color: #0033ff8a;
+  padding: 10px 15px;
+  border-radius: 8px;
   transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .link:hover {
-  background-color: #007bff; /* Цвет фона при наведении */
-  color: #fff; /* Цвет текста при наведении */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Тень */
+  background-color: #007bff;
+  color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
 .isActive {
-  font-weight: bold; /* Жирный шрифт для активной ссылки */
-  background-color: #0056b3; /* Цвет фона активной ссылки */
-  color: #fff; /* Цвет текста активной ссылки */
+  font-weight: bold;
+  background-color: #0056b3;
+  color: #fff;
 }
 
-/* Адаптивность для планшетов */
+/* Бургер-меню для мобильных */
+@media (max-width: 600px) {
+  .burger {
+    display: block;
+  }
+
+  .ul {
+    display: none; /* Скрываем меню по умолчанию */
+  }
+
+  .menuOpen {
+    display: flex; /* Показываем при открытом состоянии */
+  }
+}
+
+/* Бургер-меню для планшетов */
 @media (min-width: 600px) and (max-width: 900px) {
+  .burger {
+    display: block; /* Включаем бургер на планшетах */
+    font-size: 2.5rem; /* Увеличенный размер */
+    color: #0056b3; /* Темнее для акцента */
+  }
+
   .ul {
-    gap: 30px; /* Увеличенное расстояние между элементами */
+    display: none; /* Скрыто по умолчанию */
+  }
+
+  .menuOpen {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #f9f9f9; /* Более светлый фон */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+    width: 300px; /* Шире для планшетов */
+    gap: 25px;
+    padding: 20px; /* Больше пространства */
   }
 
   .link {
-    font-size: 1.1rem; /* Увеличиваем шрифт для планшетов */
-    padding: 12px 18px; /* Увеличиваем отступы */
-  }
-}
-
-/* Адаптивность для компьютеров */
-@media (min-width: 900px) {
-  .ul {
-    gap: 50px; /* Расстояние между элементами */
+    font-size: 1.2rem; /* Увеличенный шрифт для планшетов */
+    padding: 12px 18px; /* Увеличенные отступы */
   }
 
-  .link {
-    font-size: 1.2rem; /* Увеличиваем шрифт для компьютеров */
-    padding: 15px 20px; /* Увеличиваем отступы */
+  .link:hover {
+    background-color: #007bff;
+    color: white;
   }
 }

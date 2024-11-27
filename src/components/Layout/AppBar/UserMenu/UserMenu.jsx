@@ -1,4 +1,4 @@
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { logout } from "../../../../redux/auth/operations";
 import css from "./UserMenu.module.css";
 

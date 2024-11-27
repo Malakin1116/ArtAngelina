@@ -69,7 +69,7 @@ button:hover {
   font-family: "Playfair Display", serif;
   font-size: 2rem;
   font-weight: bold;
-  color: #ff4b5c;
+  color: #000000;
   text-align: center;
   letter-spacing: 2px;
   position: relative;
@@ -83,7 +83,7 @@ button:hover {
 .art_angelina:hover {
   transform: scale(1.1);
   text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.4);
-  color: #ff7182;
+  color: #646464;
 }
 
 .art_angelina::before,
@@ -92,7 +92,7 @@ button:hover {
   position: absolute;
   height: 3px;
   width: 50px;
-  background: #ff4b5c;
+  background: #000000;
   top: 50%;
   transform: translateY(-50%);
 }
