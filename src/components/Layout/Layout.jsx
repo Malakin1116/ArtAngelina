@@ -19,20 +19,22 @@ export default function Layout() {
         </p>
         <nav className={css.footer_social_links}>
           <a
-            href="https://www.instagram.com"
+            href="https://www.instagram.com/art_aangelina?igsh=Y2szazlhM25kcm9h"
             target="_blank"
             rel="noopener noreferrer"
             className={css.footer_social_link}
           >
             <FaInstagram size={32} className="footer-social-icon" />
+            <span>Instagram</span>
           </a>
           <a
-            href="https://www.youtube.com"
+            href="https://youtube.com/@angelinabaranovska4932?si=oS7V4QMwqh__7XzT"
             target="_blank"
             rel="noopener noreferrer"
             className={css.footer_social_link}
           >
             <FaYoutube size={32} className="footer-social-icon" />
+            <span>YouTube</span>
           </a>
         </nav>
       </footer>

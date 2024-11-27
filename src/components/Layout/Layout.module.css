@@ -1,4 +1,3 @@
-/* Стилі для футера */
 .footer {
   display: flex;
   flex-direction: column;
@@ -18,22 +17,55 @@
 
 .footer_social_links {
   display: flex;
-  gap: 15px; /* Відстань між іконками */
+  gap: 50px; /* Відстань між іконками */
   margin-top: 10px;
 }
 
 .footer_social_link {
-  text-decoration: none; /* Без підкреслення для посилань */
-  transition: transform 0.3s ease, filter 0.3s ease; /* Плавна анімація */
+  display: flex;
+  align-items: center; /* Вирівнювання іконки та тексту */
+  gap: 12px; /* Просторіший вигляд */
+  color: #ec162c;
+  text-decoration: none;
+  font-size: 1.2rem;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: transform 0.3s ease, filter 0.3s ease, background-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.footer_social_link:hover {
+  transform: scale(1.2);
+  background-color: #ec162c;
+  color: #fff;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Тінь для акценту */
 }
 
 .footer_social_icon {
-  width: 32px; /* Ширина іконки */
-  height: 32px; /* Висота іконки */
-  filter: invert(100%) grayscale(100%); /* Робить іконки білими */
+  width: 32px;
+  height: 32px;
+  color: #ec162c; /* Червоний колір іконки */
+  transition: transform 0.3s ease, color 0.3s ease;
 }
 
 .footer_social_link:hover .footer_social_icon {
-  transform: scale(1.2); /* Ефект збільшення при наведенні */
-  filter: invert(50%) sepia(100%) saturate(200%) hue-rotate(-10deg); /* Кольоровий ефект */
+  color: #fff; /* Білий колір іконки при наведенні */
+  transform: scale(1.2); /* Збільшення при наведенні */
+}
+
+@media (max-width: 768px) {
+  .footer_social_links {
+    flex-direction: column; /* Вертикальне розташування на мобільних */
+    gap: 20px;
+  }
+
+  .footer_social_link {
+    font-size: 1rem; /* Зменшений текст */
+    gap: 8px;
+  }
+
+  .footer_social_icon {
+    width: 24px;
+    height: 24px;
+  }
 }
