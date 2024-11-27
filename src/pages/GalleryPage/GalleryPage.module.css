@@ -1,39 +1,38 @@
 .container {
-  max-width: 1200px;
+  width: 100%;
   margin: 0 auto;
-  padding-right: 30px;
-  padding-left: 30px;
   background: #efe5da;
   display: flex;
   flex-direction: column;
+  align-items: center; /* Центрируем содержимое по горизонтали */
+  padding-bottom: 50px;
 }
 
 .title {
   text-align: center;
-  font-size: 2.5rem; /* Размер текста */
+  font-size: 4rem; /* Размер текста */
   font-weight: bold;
   color: #624f3a; /* Сохраняем указанный цвет */
-  margin-bottom: 20px;
-  display: inline-block; /* Для декоративных линий */
-  padding-bottom: 10px; /* Отступ для нижней линии */
-  margin-left: auto; /* Центрирование через auto */
-  margin-right: auto; /* Центрирование через auto */
 }
 
 .grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 20px;
+  display: flex;
+  flex-wrap: wrap; /* Перенос элементов на новые строки */
+  gap: 50px; /* Расстояние между карточками */
+  justify-content: center; /* Центрируем карточки */
+  width: 100%; /* Обеспечиваем равномерное заполнение */
 }
 
 .card {
+  flex: 1 1 calc(33.33% - 20px); /* 3 карточки в строке */
+  max-width: calc(33.33% - 20px); /* Ограничиваем ширину */
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   height: 300px;
   display: flex;
-  align-items: center;
+  align-items: center; /* Центрируем изображение внутри карточки */
   justify-content: center;
 }
 
@@ -45,40 +44,41 @@
 .image {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: center;
+  object-fit: cover; /* Центрирует изображение */
+  object-position: center; /* Сохраняет пропорции */
 }
 
+/* Адаптивность для маленьких экранов (мобильные устройства) */
 @media (max-width: 600px) {
   .title {
     font-size: 1.8rem;
   }
 
   .grid {
-    grid-template-columns: repeat(1, 1fr);
+    gap: 10px; /* Уменьшаем расстояние между карточками */
   }
 
   .card {
+    flex: 1 1 100%; /* Одна карточка на строку */
+    max-width: 100%;
     height: 400px;
   }
 }
 
+/* Адаптивность для планшетов */
 @media (min-width: 600px) and (max-width: 900px) {
-  .grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
   .card {
+    flex: 1 1 calc(50% - 20px); /* Две карточки в строке */
+    max-width: calc(50% - 20px);
     height: 350px;
   }
 }
 
+/* Адаптивность для компьютеров */
 @media (min-width: 900px) {
-  .grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
   .card {
+    flex: 1 1 calc(33.33% - 20px); /* Три карточки в строке */
+    max-width: calc(33.33% - 20px);
     height: 400px;
   }
 }
