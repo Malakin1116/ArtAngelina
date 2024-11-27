@@ -27,25 +27,29 @@
 /* Адаптивное уменьшение gap */
 @media (max-width: 600px) {
   .ul {
-    gap: 20px; /* Маленький gap на мобильных */
+    gap: 25px; /* Маленький gap на мобильных */
   }
 }
 
 li {
   display: flex;
   align-items: center;
+  height: 25px;
 }
 
 a {
   text-decoration: none;
-  color: white;
-  font-size: 16px;
-  font-weight: bold;
-  transition: color 0.3s ease;
+  color: #000000; /* Изменён цвет текста на чёрный */
+  font-size: 18px; /* Увеличен размер текста */
+  font-weight: 600; /* Полужирный текст */
+  letter-spacing: 1px; /* Увеличение расстояния между буквами */
+  font-family: "Arial", sans-serif; /* Новый стиль текста */
+  transition: color 0.3s ease, transform 0.3s ease; /* Добавлена анимация */
 }
 
 a:hover {
   color: #4d4c43;
+  transform: scale(1.05); /* Лёгкое увеличение текста при наведении */
 }
 
 button {
@@ -66,12 +70,12 @@ button:hover {
 
 /* Стиль для заголовка ArtAngelina */
 .art_angelina {
-  font-family: "Playfair Display", serif;
-  font-size: 2rem;
+  font-family: "Georgia", serif; /* Новый стиль текста */
+  font-size: 2.2rem; /* Увеличенный размер текста */
   font-weight: bold;
-  color: #000000;
+  color: #000000; /* Цвет текста изменён на чёрный */
   text-align: center;
-  letter-spacing: 2px;
+  letter-spacing: 1.5px; /* Увеличено расстояние между буквами */
   position: relative;
   display: inline-block;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
@@ -115,7 +119,7 @@ button:hover {
 /* Убираем полоски на планшетах */
 @media (min-width: 600px) and (max-width: 900px) {
   .art_angelina {
-    margin-right: 50px;
+    margin-right: 30px;
   }
 
   ul {
