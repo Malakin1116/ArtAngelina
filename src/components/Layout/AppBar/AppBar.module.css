@@ -1,4 +1,5 @@
-header {
+/* Общий стиль для шапки */
+.header {
   background-color: #b9a895;
   padding: 10px 20px;
   display: flex;
@@ -7,20 +8,27 @@ header {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-nav {
+.nav {
   display: flex;
   align-items: center;
   width: 100%;
   justify-content: center;
 }
 
-ul {
+.ul {
   list-style: none;
   display: flex;
   margin: 0;
   padding: 0;
   align-items: center;
-  gap: 75px;
+  gap: 75px; /* Большой gap по умолчанию */
+}
+
+/* Адаптивное уменьшение gap */
+@media (max-width: 600px) {
+  .ul {
+    gap: 20px; /* Маленький gap на мобильных */
+  }
 }
 
 li {
@@ -56,6 +64,7 @@ button:hover {
   color: #59775a;
 }
 
+/* Стиль для заголовка ArtAngelina */
 .art_angelina {
   font-family: "Playfair Display", serif;
   font-size: 2rem;
@@ -70,6 +79,7 @@ button:hover {
   transition: all 0.3s ease-in-out;
 }
 
+/* Эффект при наведении */
 .art_angelina:hover {
   transform: scale(1.1);
   text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.4);
@@ -93,4 +103,11 @@ button:hover {
 
 .art_angelina::after {
   right: -70px;
+}
+
+/* Скрываем заголовок на мобильных устройствах */
+@media (max-width: 600px) {
+  .art_angelina {
+    display: none; /* Скрываем заголовок */
+  }
 }

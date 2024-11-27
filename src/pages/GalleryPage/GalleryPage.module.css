@@ -12,9 +12,13 @@
   margin-bottom: 20px;
 }
 
+/* Адаптивна сітка для галереї */
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(150px, 1fr)
+  ); /* За замовчуванням */
   gap: 20px;
 }
 
@@ -31,8 +35,56 @@
 }
 
 .image {
-  width: 100%;
-  height: auto;
-  max-height: 200px;
+  width: 100%; /* Займає всю ширину контейнера */
+  height: auto; /* Зберігає пропорції */
   object-fit: cover;
+  max-height: 200px; /* Обмеження висоти */
+}
+
+/* Адаптивність для маленьких екранів (мобільні телефони) */
+@media (max-width: 600px) {
+  .title {
+    font-size: 1.8rem; /* Зменшення розміру заголовка */
+  }
+
+  .grid {
+    grid-template-columns: repeat(1, 1fr); /* 1 колонка для маленьких екранів */
+  }
+
+  .image {
+    max-height: 150px; /* Менша висота зображень */
+  }
+}
+
+/* Адаптивність для планшетів */
+@media (min-width: 600px) and (max-width: 900px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 колонки для планшетів */
+  }
+
+  .image {
+    max-height: 200px; /* Оптимальна висота */
+  }
+}
+
+/* Адаптивність для комп’ютерів */
+@media (min-width: 900px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr); /* 3 колонки для комп'ютерів */
+  }
+
+  .image {
+    max-height: 250px; /* Більші зображення для широких екранів */
+  }
+}
+
+/* Адаптивність для великих екранів */
+@media (min-width: 1200px) {
+  .grid {
+    grid-template-columns: repeat(4, 1fr); /* 4 колонки для великих екранів */
+  }
+
+  .image {
+    max-height: 300px; /* Максимальна висота для великих екранів */
+  }
 }

@@ -5,7 +5,7 @@
   padding-bottom: 25px;
   background-color: rgb(220, 231, 228);
   display: flex;
-  gap: 150px;
+  gap: 20px;
   justify-content: center;
   margin: 0;
 }
@@ -61,4 +61,18 @@ li:active {
 
 .link:hover {
   color: orangered;
+}
+
+/* Для планшетов (ширина экрана от 600px до 900px) */
+@media (min-width: 600px) and (max-width: 900px) {
+  .ul {
+    gap: 50px;
+  }
+}
+
+/* Для компьютеров (ширина экрана более 900px) */
+@media (min-width: 900px) {
+  .ul {
+    gap: 150px;
+  }
 }

@@ -1,15 +1,17 @@
 .userMenu {
   display: flex;
   align-items: center;
-  gap: 50px;
-  margin-left: 150px;
+  gap: 50px; /* Расстояние между приветствием и кнопкой */
+  margin-left: 150px; /* Отступ для больших экранов */
 }
 
+/* Приветствие (greeting) */
 .greeting {
   font-size: 1rem;
   color: #333;
 }
 
+/* Кнопка выхода (logoutButton) */
 .logoutButton {
   background-color: #ff4b5c;
   color: #fff;
@@ -23,4 +25,16 @@
 
 .logoutButton:hover {
   background-color: #e04351;
+}
+
+/* Адаптивность: на мобильных устройствах (<600px) */
+@media (max-width: 600px) {
+  .userMenu {
+    gap: 20px; /* Уменьшаем расстояние между элементами */
+    margin-left: 0; /* Убираем лишний отступ */
+  }
+
+  .greeting {
+    display: none; /* Скрываем приветствие */
+  }
 }
