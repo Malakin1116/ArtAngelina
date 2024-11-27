@@ -11,16 +11,26 @@
 }
 
 .artistPhoto {
-  width: 450px;
-  height: 450px;
+  width: 100%; /* По умолчанию занимает всю ширину */
+  max-width: 300px; /* Максимальная ширина для мобильных устройств */
+  height: auto; /* Сохраняет пропорции */
   border-radius: 25%;
   object-fit: cover;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   margin-bottom: 20px;
 }
 
-.artistName {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #333;
+/* Адаптивность для планшетов */
+@media (min-width: 600px) {
+  .artistPhoto {
+    max-width: 400px; /* Увеличиваем размер для планшетов */
+  }
+}
+
+/* Адаптивность для компьютеров */
+@media (min-width: 900px) {
+  .artistPhoto {
+    max-width: 450px; /* Полный размер для компьютеров */
+    height: 450px; /* Фиксированная высота для больших экранов */
+  }
 }

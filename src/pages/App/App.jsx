@@ -14,7 +14,7 @@ const RegistrationPage = lazy(() =>
 );
 
 const LoginPage = lazy(() => import("../LoginPage/LoginPage"));
-const ContactsPage = lazy(() => import("../ContactsPage/ContactsPage"));
+const GalleryPage = lazy(() => import("../GalleryPage/GalleryPage"));
 
 import { selectUserDataIsRefreshing } from "../../redux/auth/selectors";
 
@@ -48,7 +48,7 @@ export default function App() {
 
             <Route
               path="contacts"
-              element={<PrivateRoute component={<ContactsPage />} />}
+              element={<PrivateRoute component={<GalleryPage />} />}
             />
 
             <Route path="*" element={<NotFoundPage />} />
