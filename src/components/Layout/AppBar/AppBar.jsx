@@ -15,6 +15,7 @@ export default function AppBar() {
         <h2 className={css.art_angelina}>ArtAngelina</h2>
         <ul className={css.ul}>
           <Navigation />
+
           {isLoggedIn ? <UserMenu /> : <AuthNav />}
         </ul>
       </nav>
