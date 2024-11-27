@@ -5,7 +5,7 @@ export default function HomePage() {
   return (
     <div className={css.container}>
       <img
-        src="artist-photo.jpg" // Замініть на реальний шлях до фотографії
+        src="../../../public/Hero/Baranovska.JPG" // Замініть на реальний шлях до фотографії
         alt="Artist"
         className={css.artistPhoto}
       />
