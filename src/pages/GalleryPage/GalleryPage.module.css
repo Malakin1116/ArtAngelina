@@ -69,6 +69,16 @@
 
 /* Адаптивность для маленьких экранов (мобильные устройства) */
 @media (max-width: 600px) {
+  .container {
+    width: 100%;
+    padding: 0px;
+  }
+
+  .card {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+
   .title {
     font-size: 2rem;
   }
