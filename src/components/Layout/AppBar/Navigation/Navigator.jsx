@@ -16,7 +16,7 @@ export default function Navigation() {
       </li>
 
       <li className={css.li}>
-        <NavLink to="/contacts" className={getNavLinkClass}>
+        <NavLink to="/gallery" className={getNavLinkClass}>
           Gallery
         </NavLink>
       </li>

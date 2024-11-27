@@ -45,7 +45,7 @@ export default function App() {
               element={<RestrictedRoute component={<LoginPage />} />}
             />
 
-            <Route path="contacts" element={<GalleryPage />} />
+            <Route path="gallery" element={<GalleryPage />} />
 
             <Route path="*" element={<NotFoundPage />} />
           </Route>
