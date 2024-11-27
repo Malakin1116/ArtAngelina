@@ -5,8 +5,8 @@ export default function HomePage() {
   return (
     <div className={css.container}>
       <img
-        src="../../HeroGallary/Baranovska.JPG"
-        alt="Artist"
+        src="/HeroGallary/Baranovska.JPG"
+        alt="Baranovska"
         className={css.artistPhoto}
       />
       <h1 className={css.artistName}>Angelina Baranovska</h1>
