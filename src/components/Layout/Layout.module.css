@@ -1,0 +1,39 @@
+/* Стилі для футера */
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background-color: #beac8ba6; /* Приємний бежевий фон */
+  color: #fff; /* Білий текст */
+  font-size: 0.9rem; /* Розмір тексту */
+  text-align: center; /* Текст по центру */
+}
+
+.footer_brand {
+  font-weight: bold;
+  color: #ff4b5c; /* Яскравий колір бренду */
+}
+
+.footer_social_links {
+  display: flex;
+  gap: 15px; /* Відстань між іконками */
+  margin-top: 10px;
+}
+
+.footer_social_link {
+  text-decoration: none; /* Без підкреслення для посилань */
+  transition: transform 0.3s ease, filter 0.3s ease; /* Плавна анімація */
+}
+
+.footer_social_icon {
+  width: 32px; /* Ширина іконки */
+  height: 32px; /* Висота іконки */
+  filter: invert(100%) grayscale(100%); /* Робить іконки білими */
+}
+
+.footer_social_link:hover .footer_social_icon {
+  transform: scale(1.2); /* Ефект збільшення при наведенні */
+  filter: invert(50%) sepia(100%) saturate(200%) hue-rotate(-10deg); /* Кольоровий ефект */
+}

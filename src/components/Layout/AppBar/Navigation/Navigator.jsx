@@ -20,7 +20,7 @@ export default function Navigation() {
       {isLoggedIn && (
         <li className={css.li}>
           <NavLink to="/contacts" className={getNavLinkClass}>
-            Contacts
+            Gallery
           </NavLink>
         </li>
       )}
