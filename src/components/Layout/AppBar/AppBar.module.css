@@ -111,3 +111,11 @@ button:hover {
     display: none; /* Скрываем заголовок */
   }
 }
+
+/* Убираем полоски на планшетах */
+@media (min-width: 600px) and (max-width: 900px) {
+  .art_angelina::before,
+  .art_angelina::after {
+    display: none; /* Убираем полоски */
+  }
+}
