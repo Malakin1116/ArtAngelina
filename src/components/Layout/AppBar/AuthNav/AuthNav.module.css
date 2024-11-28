@@ -78,7 +78,7 @@ body.modal-open {
   bottom: 0;
 }
 .burger-active {
-  background-color: #efe5da;
+  background-color: transparent;
 }
 
 .burger-active .burger-line-first,
