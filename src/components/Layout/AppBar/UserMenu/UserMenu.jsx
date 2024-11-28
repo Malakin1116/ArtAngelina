@@ -11,6 +11,7 @@ export default function UserMenu() {
 
   return (
     <li className={css.userMenu}>
+      <span className={css.greeting}>Welcome, User!</span>
       <button onClick={onLogout} className={css.logoutButton}>
         Logout
       </button>
