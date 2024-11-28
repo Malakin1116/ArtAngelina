@@ -28,21 +28,28 @@ body.modal-open {
   position: relative;
   border: none;
   background-color: transparent;
+  /* Основной цвет кнопки */
   cursor: pointer;
   z-index: 1000;
+  display: flex;
+  justify-content: center; /* Горизонтальное центрирование */
+  align-items: center;
 
-  /* Убираем стандартные стили фокуса и активного состояния */
+  /* Убираем стандартные стили фокуса */
   outline: none;
   appearance: none;
   -webkit-appearance: none; /* Для Safari */
 
   /* Убираем эффекты активного состояния */
-  &:focus,
-  &:active {
-    outline: none;
-    box-shadow: none;
-    background-color: transparent; /* Прозрачный фон */
-  }
+  touch-action: manipulation;
+}
+
+.burger:focus,
+.burger:active {
+  outline: none;
+  box-shadow: none;
+  background-color: transparent;
+  /* Цвет фона при фокусе */
 }
 
 .burger-line {
@@ -69,6 +76,9 @@ body.modal-open {
 .burger-line-fourth {
   width: 30px;
   bottom: 0;
+}
+.burger-active {
+  background-color: #efe5da;
 }
 
 .burger-active .burger-line-first,
