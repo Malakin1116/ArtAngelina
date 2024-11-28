@@ -10,7 +10,7 @@ body.modal-open {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: #ffffff; /* Белый цвет */
+  background-color: #efe5da; /* Белый цвет */
   z-index: 999;
   display: flex;
   flex-direction: column;
@@ -96,9 +96,10 @@ body.modal-open {
 }
 
 .menu-box-link {
-  font-size: 1.5rem;
-  color: #000000; /* Чёрный цвет */
+  font-size: 1rem; /* Размер шрифта */
+  color: #0600f991; /* Чёрный цвет */
   text-decoration: none;
+  font-weight: 550; /* Жирный текст */
   transition: color 0.3s;
 }
 
