@@ -67,6 +67,12 @@
   color: #ff4b5c;
 }
 
+.description {
+  font-size: 14px;
+  color: #666;
+  margin-top: 5px;
+}
+
 /* Адаптивность для маленьких экранов (мобильные устройства) */
 @media (max-width: 600px) {
   .container {
