@@ -12,7 +12,6 @@ export default function AppBar() {
   return (
     <header className={css.header}>
       <nav className={css.nav}>
-        <h2 className={css.art_angelina}>ArtAngelina</h2>
         <ul className={css.ul}>
           <Navigation />
 

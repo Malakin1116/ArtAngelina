@@ -111,8 +111,8 @@ button:hover {
 
 /* Скрываем заголовок на мобильных устройствах */
 @media (max-width: 600px) {
-  .art_angelina {
-    display: none; /* Скрываем заголовок */
+  .header {
+    display: none;
   }
 }
 

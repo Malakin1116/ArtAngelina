@@ -54,18 +54,7 @@
 }
 
 @media (max-width: 768px) {
-  .footer_social_links {
-    flex-direction: column; /* Вертикальне розташування на мобільних */
-    gap: 20px;
-  }
-
-  .footer_social_link {
-    font-size: 1rem; /* Зменшений текст */
-    gap: 8px;
-  }
-
-  .footer_social_icon {
-    width: 24px;
-    height: 24px;
+  .footer {
+    display: none;
   }
 }
