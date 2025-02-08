@@ -4,11 +4,10 @@
   align-items: center;
   justify-content: center;
   background-color: rgba(34, 55, 69, 1);
-  min-height: 90vh;
+  min-height: 100vh;
   text-align: center;
   position: relative;
   padding: 10px;
-  padding-bottom: 88px;
 }
 
 .title {
@@ -52,6 +51,7 @@
   width: 100%;
   max-width: 400px;
   margin: auto;
+  margin-top: 10px;
 }
 
 .card {
