@@ -7,6 +7,7 @@
   text-align: center;
   position: relative;
   padding: 10px;
+  padding-top: 48px;
 }
 
 .image {
@@ -117,4 +118,23 @@
 .cartIcon {
   font-size: 44px;
   color: rgba(10, 10, 35, 1);
+}
+
+@media (max-width: 400px) {
+  .container {
+    padding-top: 58px;
+  }
+  .image {
+    width: 325px;
+    height: 300px;
+  }
+  .itemContainer {
+    width: 325px;
+  }
+  .title {
+    display: none;
+  }
+  .navContainer {
+    margin-bottom: 0px;
+  }
 }
