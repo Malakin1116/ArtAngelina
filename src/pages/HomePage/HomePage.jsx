@@ -11,9 +11,8 @@ import css from "./HomePage.module.css";
 export default function HomePage() {
   return (
     <div className={css.container}>
-      <h1 className={css.title}>Art Angelina</h1>
+      <h1 className={css.title}>ArtAngelina</h1>
 
-      {/* Фото */}
       <div className={css.imageWrapper}>
         <img
           src="/HeroGallary/Baranovska.JPG"
@@ -22,7 +21,6 @@ export default function HomePage() {
         />
       </div>
 
-      {/* Соцмережі (замість кнопок тепер посилання) */}
       <div className={css.socialButtons}>
         <a
           href="https://www.instagram.com/art_aangelina?igsh=Y2szazlhM25kcm9h"
@@ -58,7 +56,6 @@ export default function HomePage() {
         </a>
       </div>
 
-      {/* Галерея */}
       <NavLink to="/gallery" className={css.galleryButton}>
         <FaPaintBrush className={css.icon} /> Gallery
       </NavLink>

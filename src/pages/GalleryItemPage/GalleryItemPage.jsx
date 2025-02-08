@@ -1,4 +1,8 @@
 import { useParams } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../../redux/cart/slice";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import css from "./GalleryItemPage.module.css";
 import { NavLink } from "react-router-dom";
 import { MdAddShoppingCart } from "react-icons/md";
@@ -62,14 +66,28 @@ const images = [
 
 export default function GalleryItemPage() {
   const { id } = useParams();
+  const dispatch = useDispatch();
   const image = images.find((img) => img.id === parseInt(id));
 
   if (!image) {
     return <p>Item not found</p>;
   }
 
+  const handleAddToCart = () => {
+    dispatch(
+      addToCart({
+        id: image.id,
+        title: image.title,
+        price: image.price,
+        src: image.src,
+      })
+    );
+    toast.success(`${image.title} added to cart!`);
+  };
+
   return (
     <div className={css.container}>
+      <ToastContainer position="top-right" style={{ marginTop: "48px" }} />
       <h1 className={css.title}>ArtAngelina</h1>
       <div className={css.navContainer}>
         <NavLink to="/gallery" className={css.nav} aria-label="Gallery">
@@ -84,7 +102,11 @@ export default function GalleryItemPage() {
         <h2 className={css.titleItem}>{image.title}</h2>
         <p className={css.description}>{image.description}</p>
         <span className={css.spanCart}>
-          <button className={css.priceContainer} aria-label="Add to cart">
+          <button
+            className={css.priceContainer}
+            onClick={handleAddToCart}
+            aria-label="Add to cart"
+          >
             <span className={css.price}>{image.price}</span>
             <MdAddShoppingCart className={css.cartIcon} />
           </button>

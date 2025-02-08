@@ -1,38 +1,221 @@
 .container {
-  text-align: center;
-  padding: 20px;
-  min-height: 80vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  background: linear-gradient(to bottom, #223745, #1b2a38);
+  min-height: 100vh;
+  text-align: center;
+  padding: 20px;
+  padding-top: 60px;
 }
 
-.title {
-  font-size: 2rem;
-  color: white;
+.cart {
+  max-width: 400px;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cartList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.cartItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #f8f8f8;
+  border-radius: 10px;
   margin-bottom: 10px;
+  padding: 10px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  width: 324px;
 }
 
-.message {
-  font-size: 1.2rem;
-  color: rgba(255, 255, 255, 0.8);
-  margin-bottom: 20px;
-}
-
-/* Заглушка-картинка */
-.illustration {
+.itemImage {
   width: 150px;
   height: 150px;
-  background-color: rgba(255, 255, 255, 0.2);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  border-radius: 8px;
+  object-fit: cover;
+  border: 1px solid #d4af37;
 }
 
-.illustration::after {
-  content: "🛒"; /* Emoji як заглушка */
-  font-size: 3rem;
+.itemTitle {
+  font-size: 16px;
+  font-weight: bold;
+  color: #222;
+}
+
+.itemTotal {
+  font-size: 18px;
+  font-weight: bold;
+  color: #2d7d2d;
+  margin-top: 8px;
+}
+
+.removeButton {
+  background: #d9534f;
+  border: none;
+  font-size: 14px;
+  cursor: pointer;
   color: white;
+  border-radius: 8px;
+  padding: 8px 12px;
+  transition: transform 0.2s, background 0.3s ease;
+  width: 100px;
+  margin-top: 10px;
+}
+
+.removeButton:hover {
+  background: #c9302c;
+  transform: scale(1.05);
+}
+
+.totalContainer {
+  display: flex;
+  justify-content: space-between;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 12px;
+  background: rgba(0, 128, 0, 0.15);
+  border-radius: 8px;
+  margin-top: 10px;
+  width: 300px;
+}
+
+.totalText {
+  color: #222;
+}
+
+.totalAmount {
+  color: #008000;
+  font-size: 20px;
+}
+
+.checkoutButton {
+  background: #28a745;
+  color: white;
+  border: none;
+  padding: 12px;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+  width: 100%;
+  margin-top: 15px;
+}
+
+.checkoutButton:hover {
+  background: #218838;
+  transform: scale(1.05);
+}
+
+.react-confirm-alert-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* 🔹 Стилізація самої модалки */
+.react-confirm-alert-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(255, 155, 155, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+/* 🔹 Саме модальне вікно */
+.custom-confirm-modal {
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  width: 320px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 🔹 Заголовок */
+.custom-confirm-modal h1 {
+  font-size: 20px;
+  font-weight: bold;
+  color: #222;
+  margin-bottom: 12px;
+}
+
+/* 🔹 Текст під заголовком */
+.custom-confirm-modal p {
+  font-size: 16px;
+  color: #444;
+  margin-bottom: 20px;
+  max-width: 280px;
+  line-height: 1.4;
+}
+
+/* 🔹 Блок для кнопок */
+.modal-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  width: 100%;
+}
+
+/* 🔹 Кнопка підтвердження */
+.confirm-btn {
+  background: #dc3545;
+  color: white;
+  border: none;
+  padding: 12px 18px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+  width: 120px;
+}
+
+.confirm-btn:hover {
+  background: #c82333;
+  transform: scale(1.05);
+}
+
+/* 🔹 Кнопка відміни */
+.cancel-btn {
+  background: #6c757d;
+  color: white;
+  border: none;
+  padding: 12px 18px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  width: 120px;
+}
+
+.cancel-btn:hover {
+  background: #5a6268;
 }

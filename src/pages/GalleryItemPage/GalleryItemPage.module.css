@@ -3,11 +3,11 @@
   flex-direction: column;
   align-items: center;
   background-color: rgba(34, 55, 69, 1);
-  min-height: 90vh;
+  min-height: 100vh;
   text-align: center;
   position: relative;
   padding: 10px;
-  padding-bottom: 88px;
+  padding-top: 48px;
 }
 
 .image {
@@ -39,13 +39,12 @@
 
 .itemContainer {
   width: 350px;
-
   display: flex;
   flex-direction: column;
   color: rgba(10, 10, 35, 1);
   background-color: rgb(253, 253, 215);
   border-radius: 10px;
-  overflow: hidden;
+  margin-top: 10px;
 }
 
 .nav {
@@ -80,7 +79,7 @@
   font-weight: bold;
   margin: 0;
   color: green;
-  margin-right: auto; /* Це змістить ціну вліво */
+  margin-right: auto;
 }
 
 .cartButton {
@@ -93,7 +92,7 @@
 .priceContainer {
   display: flex;
   align-items: center;
-  justify-content: flex-end; /* Це перемістить кнопку вправо */
+  justify-content: flex-end;
   background-color: rgba(221, 237, 213, 1);
   padding: 8px 12px;
   border-radius: 8px;
@@ -119,4 +118,23 @@
 .cartIcon {
   font-size: 44px;
   color: rgba(10, 10, 35, 1);
+}
+
+@media (max-width: 400px) {
+  .container {
+    padding-top: 58px;
+  }
+  .image {
+    width: 325px;
+    height: 300px;
+  }
+  .itemContainer {
+    width: 325px;
+  }
+  .title {
+    display: none;
+  }
+  .navContainer {
+    margin-bottom: 0px;
+  }
 }

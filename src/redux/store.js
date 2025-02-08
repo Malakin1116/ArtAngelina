@@ -4,6 +4,7 @@ import filterReducer from "./filters/slice";
 import { authReducer } from "./auth/slice";
 import persistReducer from "redux-persist/es/persistReducer";
 import storage from "redux-persist/lib/storage";
+import cartReducer from "./cart/slice";
 
 import { persistStore } from "redux-persist";
 
@@ -18,6 +19,7 @@ export const store = configureStore({
     contacts: contactReducer,
     filters: filterReducer,
     auth: persistReducer(authConfig, authReducer),
+    cart: cartReducer,
   },
 });
 
