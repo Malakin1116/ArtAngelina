@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import css from "./GalleryPage.module.css";
 
 const images = [
@@ -28,7 +29,16 @@ const images = [
 export default function GalleryPage() {
   return (
     <div className={css.container}>
-      <h1 className={css.title}>Gallery</h1>
+      <h1 className={css.title}>ArtAngelina</h1>
+
+      <div className={css.navContainer}>
+        <NavLink to="/gallery" className={css.nav} aria-label="Gallery">
+          Gallery
+        </NavLink>
+        <NavLink to="/merch" className={css.nav} aria-label="Merch">
+          Merch
+        </NavLink>
+      </div>
 
       <div className={css.grid}>
         {images.map((image) => (

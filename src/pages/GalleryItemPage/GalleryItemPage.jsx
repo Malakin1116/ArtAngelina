@@ -1,5 +1,7 @@
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import css from "./GalleryItemPage.module.css";
+import { NavLink } from "react-router-dom";
+import { MdAddShoppingCart } from "react-icons/md";
 
 const images = [
   {
@@ -52,7 +54,7 @@ const images = [
     src: "/ArtGallary/Zip/art6.jpg",
     alt: "Image 6",
     title: "Desert",
-    price: "$999",
+    price: "$800",
     description:
       "Year of creation: 2024. Dimensions: 50x70 cm. Material: cotton canvas, acrylic, acrylic enamel, decorative glitter, acrylic varnish.",
   },
@@ -60,7 +62,6 @@ const images = [
 
 export default function GalleryItemPage() {
   const { id } = useParams();
-  const navigate = useNavigate();
   const image = images.find((img) => img.id === parseInt(id));
 
   if (!image) {
@@ -69,13 +70,26 @@ export default function GalleryItemPage() {
 
   return (
     <div className={css.container}>
-      <button className={css.backButton} onClick={() => navigate(-1)}>
-        ← Back
-      </button>
-      <img src={image.src} alt={image.alt} className={css.image} />
-      <h2 className={css.title}>{image.title}</h2>
-      <p className={css.description}>{image.description}</p>
-      <p className={css.price}>{image.price}</p>
+      <h1 className={css.title}>ArtAngelina</h1>
+      <div className={css.navContainer}>
+        <NavLink to="/gallery" className={css.nav} aria-label="Gallery">
+          Gallery
+        </NavLink>
+        <NavLink to="/merch" className={css.nav} aria-label="Merch">
+          Merch
+        </NavLink>
+      </div>
+      <div className={css.itemContainer}>
+        <img src={image.src} alt={image.alt} className={css.image} />
+        <h2 className={css.titleItem}>{image.title}</h2>
+        <p className={css.description}>{image.description}</p>
+        <span className={css.spanCart}>
+          <button className={css.priceContainer} aria-label="Add to cart">
+            <span className={css.price}>{image.price}</span>
+            <MdAddShoppingCart className={css.cartIcon} />
+          </button>
+        </span>
+      </div>
     </div>
   );
 }
