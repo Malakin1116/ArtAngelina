@@ -1,124 +1,96 @@
 .container {
-  width: 100%;
-  margin: 0 auto;
-  background: #efe5da;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 20px 15px 50px;
+  text-align: center;
+  padding: 20px;
 }
 
 .title {
-  text-align: center;
-  font-size: 3rem;
-  font-weight: bold;
-  color: #624f3a;
+  font-size: 2rem;
+  color: white;
   margin-bottom: 20px;
 }
 
+/* Галерея */
 .grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 50px;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
   width: 100%;
+  max-width: 400px;
+  margin: auto;
 }
 
 .card {
-  flex: 1 1 calc(33.33% - 50px);
-  max-width: calc(33.33% - 50px);
-  border-radius: 10px;
+  cursor: pointer;
+  border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  height: auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  transition: transform 0.2s ease-in-out;
 }
 
 .card:hover {
   transform: scale(1.05);
-  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
 }
 
 .image {
   width: 100%;
-  height: 300px;
-  object-fit: cover;
-  object-position: center;
-  border-bottom: 1px solid #ccc;
+  height: auto;
+  border-radius: 8px;
 }
 
-.info {
+/* Модальне вікно */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modalContent {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 350px;
   text-align: center;
-  padding: 10px;
 }
 
-.info .title {
+.modalImage {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.modalTitle {
   font-size: 1.5rem;
-  color: #333;
-  margin: 10px 0 5px;
+  color: black;
+  margin-top: 10px;
 }
 
-.info .price {
+.modalDescription {
+  font-size: 1rem;
+  color: black;
+  margin: 10px 0;
+}
+
+.modalPrice {
   font-size: 1.2rem;
   font-weight: bold;
-  color: #ff4b5c;
+  color: green;
 }
 
-.description {
-  font-size: 14px;
-  color: #666;
-  margin-top: 5px;
+.closeButton {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 10px;
+  margin-top: 10px;
+  cursor: pointer;
+  border-radius: 5px;
 }
 
-/* Адаптивность для маленьких экранов (мобильные устройства) */
-@media (max-width: 600px) {
-  .container {
-    width: 100%;
-    padding: 0px;
-  }
-
-  .card {
-    padding-left: 25px;
-    padding-right: 25px;
-  }
-
-  .title {
-    font-size: 2rem;
-  }
-
-  .card {
-    flex: 1 1 100%;
-    max-width: 100%;
-  }
-
-  .image {
-    height: 400px;
-  }
-}
-
-/* Адаптивность для планшетов */
-@media (min-width: 600px) and (max-width: 900px) {
-  .card {
-    flex: 1 1 calc(50% - 50px);
-    max-width: calc(50% - 50px);
-  }
-
-  .image {
-    height: 350px;
-  }
-}
-
-/* Адаптивность для компьютеров */
-@media (min-width: 900px) {
-  .card {
-    flex: 1 1 calc(33.33% - 50px);
-    max-width: calc(33.33% - 50px);
-  }
-
-  .image {
-    height: 400px;
-  }
+.closeButton:hover {
+  background-color: darkred;
 }

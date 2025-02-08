@@ -1,0 +1,38 @@
+.container {
+  text-align: center;
+  padding: 20px;
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.title {
+  font-size: 2rem;
+  color: white;
+  margin-bottom: 10px;
+}
+
+/* Заглушка-аватар */
+.avatar {
+  width: 120px;
+  height: 120px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.avatar::after {
+  content: "👤"; /* Іконка-плейсхолдер */
+  font-size: 3rem;
+  color: white;
+}
+
+.message {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.8);
+}
