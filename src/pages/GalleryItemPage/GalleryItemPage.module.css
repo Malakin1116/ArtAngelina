@@ -79,7 +79,7 @@
   font-weight: bold;
   margin: 0;
   color: green;
-  margin-right: auto; /* Це змістить ціну вліво */
+  margin-right: auto;
 }
 
 .cartButton {
@@ -92,7 +92,7 @@
 .priceContainer {
   display: flex;
   align-items: center;
-  justify-content: flex-end; /* Це перемістить кнопку вправо */
+  justify-content: flex-end;
   background-color: rgba(221, 237, 213, 1);
   padding: 8px 12px;
   border-radius: 8px;

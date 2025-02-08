@@ -8,12 +8,12 @@
   display: flex;
   justify-content: space-around;
   padding: 0;
-
   box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
   z-index: 1000;
 }
 
 .navIcon {
+  position: relative; /* Додаємо для бейджа */
   color: black;
   font-size: 1.8rem;
   text-decoration: none;
@@ -27,4 +27,19 @@
 
 .icon {
   font-size: 38px;
+}
+
+.cartBadge {
+  position: absolute;
+  top: 11px;
+  right: 8px;
+  background: rgb(252, 73, 73);
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 2px 2px;
+  border-radius: 50%;
+  min-width: 18px;
+  text-align: center;
+  line-height: 1;
 }
