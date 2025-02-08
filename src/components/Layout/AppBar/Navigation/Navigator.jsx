@@ -9,7 +9,7 @@ export default function Navigation() {
         <FaHome className={css.icon} aria-hidden="true" />
       </NavLink>
 
-      <NavLink to="/catalog" className={css.navIcon} aria-label="Catalog">
+      <NavLink to="/gallery" className={css.navIcon} aria-label="Catalog">
         <FaImages className={css.icon} aria-hidden="true" />
       </NavLink>
 

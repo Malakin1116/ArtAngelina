@@ -1,19 +1,18 @@
-/* Контейнер */
 .container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   background-color: rgba(34, 55, 69, 1);
-  min-height: 90vh; /* Робимо контейнер на весь екран */
+  min-height: 90vh;
   text-align: center;
   position: relative;
-  padding-bottom: 80px; /* Додаємо відступ, щоб не перекривало навбар */
+  padding-bottom: 80px;
 }
 
 .title {
   font-family: "Kefa", "Merriweather", "Georgia", sans-serif;
-  color: rgb(253, 253, 215);
+  color: #fdfdea;
   font-size: 2rem;
   margin-bottom: 20px;
 }
@@ -38,14 +37,14 @@
   object-fit: cover;
 }
 
-/* Кнопки соцмереж */
 .socialButtons {
   display: grid;
+  font-family: "Kefa", "Merriweather", "Georgia", sans-serif;
   grid-template-columns: repeat(2, 1fr);
   gap: 10px;
   width: 100%;
   max-width: 350px;
-  margin-bottom: 50px;
+  margin-bottom: 25px;
 }
 
 .button {
@@ -55,16 +54,13 @@
   font-size: 1rem;
   font-weight: bold;
   color: rgba(10, 10, 35, 1);
+  font-family: "Kefa", "Merriweather", "Georgia", sans-serif;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 8px;
   cursor: pointer;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.button i {
-  margin-right: 8px;
 }
 
 .button:hover {
@@ -77,6 +73,7 @@
   font-size: 1.2rem;
   font-weight: bold;
   color: rgba(10, 10, 35, 1);
+  font-family: "Kefa", "Merriweather", "Georgia", sans-serif;
   padding: 12px 20px;
   border-radius: 8px;
   display: flex;
