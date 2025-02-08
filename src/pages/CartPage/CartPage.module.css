@@ -10,8 +10,8 @@
 }
 
 .cart {
-  max-width: 400px;
-  background: rgba(255, 255, 255, 0.95);
+  width: 320px;
+  background: rgb(253, 253, 215);
   padding: 15px;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
@@ -30,12 +30,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: #f8f8f8;
+  background: rgba(34, 55, 69, 0.25);
   border-radius: 10px;
   margin-bottom: 10px;
   padding: 10px;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
-  width: 324px;
 }
 
 .itemImage {
@@ -86,7 +85,7 @@
   background: rgba(0, 128, 0, 0.15);
   border-radius: 8px;
   margin-top: 10px;
-  width: 300px;
+  width: 250px;
 }
 
 .totalText {
@@ -108,7 +107,7 @@
   border-radius: 10px;
   cursor: pointer;
   transition: background 0.3s ease, transform 0.2s ease;
-  width: 100%;
+  width: 125px;
   margin-top: 15px;
 }
 

@@ -77,6 +77,10 @@ const GalleryItemPage = lazy(() =>
   import("../GalleryItemPage/GalleryItemPage")
 );
 
+// Новые маршруты для мерча
+const MerchPage = lazy(() => import("../MerchPage/MerchPage"));
+const MerchItemPage = lazy(() => import("../MerchItemPage/MerchItemPage"));
+
 export default function App() {
   const dispatch = useDispatch();
   const isRefreshing = useSelector(selectUserDataIsRefreshing);
@@ -96,6 +100,10 @@ export default function App() {
           <Route index element={<HomePage />} />
           <Route path="gallery" element={<GalleryPage />} />
           <Route path="gallery/:id" element={<GalleryItemPage />} />
+
+          <Route path="merch" element={<MerchPage />} />
+          <Route path="merch/:id" element={<MerchItemPage />} />
+
           <Route path="cart" element={<CartPage />} />
           <Route path="profile" element={<ProfilePage />} />
           <Route path="*" element={<NotFoundPage />} />
