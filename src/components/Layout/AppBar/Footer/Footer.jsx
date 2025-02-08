@@ -1,5 +1,5 @@
 import css from "./Footer.module.css";
-import { FaInstagram, FaYoutube } from "react-icons/fa";
+// import { FaInstagram, FaYoutube } from "react-icons/fa";
 
 export default function Footer() {
   return (
@@ -8,7 +8,7 @@ export default function Footer() {
         © 2024 <span className={css.footer_brand}>ArtAngelina</span>. All rights
         reserved.
       </p>
-      <nav className={css.footer_social_links}>
+      {/* <nav className={css.footer_social_links}>
         <a
           href="https://www.instagram.com/art_aangelina?igsh=Y2szazlhM25kcm9h"
           target="_blank"
@@ -27,7 +27,7 @@ export default function Footer() {
           <FaYoutube size={32} className="footer-social-icon" />
           <span>YouTube</span>
         </a>
-      </nav>
+      </nav> */}
     </footer>
   );
 }

@@ -4,16 +4,16 @@ import { useDispatch, useSelector } from "react-redux";
 import { refreshUser } from "../../redux/auth/operations";
 
 import Layout from "../../components/Layout/Layout";
-import RestrictedRoute from "../../components/RestrictedRoute/RestrictedRoute";
+// import RestrictedRoute from "../../components/RestrictedRoute/RestrictedRoute";
 
 const HomePage = lazy(() => import("../HomePage/HomePage"));
 const NotFoundPage = lazy(() => import("../NotFounderPage/NotFounderPage"));
-const RegistrationPage = lazy(() =>
-  import("../RagistrationPage/RegistrationPage")
-);
+// const RegistrationPage = lazy(() =>
+//   import("../RagistrationPage/RegistrationPage")
+// );
 
-const LoginPage = lazy(() => import("../LoginPage/LoginPage"));
-const GalleryPage = lazy(() => import("../GalleryPage/GalleryPage"));
+// const LoginPage = lazy(() => import("../LoginPage/LoginPage"));
+// const GalleryPage = lazy(() => import("../GalleryPage/GalleryPage"));
 
 import { selectUserDataIsRefreshing } from "../../redux/auth/selectors";
 
@@ -36,7 +36,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<HomePage />} />
-            <Route
+            {/* <Route
               path="register"
               element={<RestrictedRoute component={<RegistrationPage />} />}
             />
@@ -45,7 +45,7 @@ export default function App() {
               element={<RestrictedRoute component={<LoginPage />} />}
             />
 
-            <Route path="gallery" element={<GalleryPage />} />
+            <Route path="gallery" element={<GalleryPage />} /> */}
 
             <Route path="*" element={<NotFoundPage />} />
           </Route>

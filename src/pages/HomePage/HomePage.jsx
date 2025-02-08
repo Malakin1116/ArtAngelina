@@ -1,22 +1,67 @@
-import { Outlet, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import {
+  FaInstagram,
+  FaYoutube,
+  FaTelegramPlane,
+  FaTiktok,
+  FaPaintBrush,
+} from "react-icons/fa";
 import css from "./HomePage.module.css";
 
 export default function HomePage() {
-  const getNavLinkClass = ({ isActive }) =>
-    isActive ? `${css.navLink} ${css.active}` : css.navLink;
-
   return (
     <div className={css.container}>
-      <img
-        src="/HeroGallary/Baranovska.JPG"
-        alt="Baranovska"
-        className={css.artistPhoto}
-      />
-      <h1 className={css.artistName}>Angelina Baranovska</h1>
-      <NavLink to="/gallery" className={getNavLinkClass}>
-        Gallery
+      <h1 className={css.title}>Art Angelina</h1>
+
+      {/* Фото */}
+      <div className={css.imageWrapper}>
+        <img
+          src="/HeroGallary/Baranovska.JPG"
+          alt="Baranovska"
+          className={css.artistPhoto}
+        />
+      </div>
+
+      {/* Соцмережі (замість кнопок тепер посилання) */}
+      <div className={css.socialButtons}>
+        <a
+          href="https://www.instagram.com/art_aangelina?igsh=Y2szazlhM25kcm9h"
+          target="_blank"
+          rel="noopener noreferrer"
+          className={css.button}
+        >
+          <FaInstagram className={css.icon} /> Instagram
+        </a>
+        <a
+          href="https://youtube.com/@angelinabaranovska4932?si=oS7V4QMwqh__7XzT"
+          target="_blank"
+          rel="noopener noreferrer"
+          className={css.button}
+        >
+          <FaYoutube className={css.icon} /> YouTube
+        </a>
+        <a
+          href="https://t.me/yourtelegramchannel"
+          target="_blank"
+          rel="noopener noreferrer"
+          className={css.button}
+        >
+          <FaTelegramPlane className={css.icon} /> Telegram
+        </a>
+        <a
+          href="https://www.tiktok.com/@yourtiktokprofile"
+          target="_blank"
+          rel="noopener noreferrer"
+          className={css.button}
+        >
+          <FaTiktok className={css.icon} /> TikTok
+        </a>
+      </div>
+
+      {/* Галерея */}
+      <NavLink to="/gallery" className={css.galleryButton}>
+        <FaPaintBrush className={css.icon} /> Gallery
       </NavLink>
-      <Outlet />
     </div>
   );
 }
