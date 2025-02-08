@@ -76,6 +76,7 @@ const ProfilePage = lazy(() => import("../ProfilePage/ProfilePage"));
 const GalleryItemPage = lazy(() =>
   import("../GalleryItemPage/GalleryItemPage")
 );
+import ScrollToTop from "../../components/ScrollToTop/ScrollToTop";
 
 // Новые маршруты для мерча
 const MerchPage = lazy(() => import("../MerchPage/MerchPage"));
@@ -95,6 +96,7 @@ export default function App() {
 
   return (
     <Suspense fallback={<div>Loading...</div>}>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<HomePage />} />
