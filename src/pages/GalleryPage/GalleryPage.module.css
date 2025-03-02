@@ -90,3 +90,41 @@
     margin-top: 20px;
   }
 }
+
+@media (min-width: 768px) {
+  .grid {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+    max-width: 768px;
+    margin: auto;
+    margin-top: 10px;
+  }
+  .image {
+    width: 350px;
+    height: 350px;
+  }
+}
+
+@media (min-width: 1025px) {
+  .container {
+    padding-top: 0px;
+  }
+  .grid {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+    max-width: 1025px;
+    margin-top: 10px;
+  }
+  .image {
+    width: 500px;
+    height: 500px;
+  }
+}

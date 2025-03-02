@@ -6,7 +6,7 @@
   min-height: 100vh;
   text-align: center;
   padding: 20px;
-  padding-top: 60px;
+  padding-top: 70px;
 }
 
 .cart {
@@ -21,6 +21,9 @@
 }
 
 .cartList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
   list-style: none;
   padding: 0;
   margin: 0;
@@ -32,7 +35,6 @@
   align-items: center;
   background: rgba(34, 55, 69, 0.25);
   border-radius: 10px;
-  margin-bottom: 10px;
   padding: 10px;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
 }
@@ -129,7 +131,6 @@
   z-index: 1000;
 }
 
-/* 🔹 Стилізація самої модалки */
 .react-confirm-alert-overlay {
   position: fixed;
   top: 0;
@@ -143,7 +144,6 @@
   z-index: 2000;
 }
 
-/* 🔹 Саме модальне вікно */
 .custom-confirm-modal {
   background: #ffffff;
   padding: 25px;
@@ -157,7 +157,6 @@
   align-items: center;
 }
 
-/* 🔹 Заголовок */
 .custom-confirm-modal h1 {
   font-size: 20px;
   font-weight: bold;
@@ -165,7 +164,6 @@
   margin-bottom: 12px;
 }
 
-/* 🔹 Текст під заголовком */
 .custom-confirm-modal p {
   font-size: 16px;
   color: #444;
@@ -174,7 +172,6 @@
   line-height: 1.4;
 }
 
-/* 🔹 Блок для кнопок */
 .modal-buttons {
   display: flex;
   justify-content: center;
@@ -182,7 +179,6 @@
   width: 100%;
 }
 
-/* 🔹 Кнопка підтвердження */
 .confirm-btn {
   background: #dc3545;
   color: white;
@@ -201,7 +197,6 @@
   transform: scale(1.05);
 }
 
-/* 🔹 Кнопка відміни */
 .cancel-btn {
   background: #6c757d;
   color: white;
@@ -217,4 +212,67 @@
 
 .cancel-btn:hover {
   background: #5a6268;
+}
+
+@media (min-width: 768px) {
+  .cart {
+    width: 500px;
+  }
+  .cartList {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+  }
+  .itemImage {
+    width: 200px;
+    height: 200px;
+    border-radius: 8px;
+    object-fit: cover;
+    border: 1px solid #d4af37;
+  }
+  .totalContainer {
+    margin-top: 25px;
+    width: 250px;
+  }
+  .checkoutButton {
+    width: 150px;
+  }
+  .cancel-btn {
+    width: 150px;
+  }
+}
+
+@media (min-width: 1025px) {
+  .container {
+    padding-top: 10px;
+  }
+  .cart {
+    width: 750px;
+  }
+  .cartList {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+  }
+  .itemImage {
+    width: 300px;
+    height: 300px;
+    border-radius: 8px;
+    object-fit: cover;
+    border: 1px solid #d4af37;
+  }
+  .totalContainer {
+    margin-top: 25px;
+    width: 250px;
+  }
+  .checkoutButton {
+    width: 200px;
+    height: 50px;
+  }
+  .cancel-btn {
+    width: 300px;
+  }
+  .removeButton {
+    width: 120px;
+  }
 }

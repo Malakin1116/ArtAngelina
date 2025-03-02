@@ -3,8 +3,9 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 48px;
-  background-color: rgba(245, 245, 220, 1);
+  height: 54px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -42,4 +43,59 @@
   min-width: 18px;
   text-align: center;
   line-height: 1;
+}
+
+@media (max-width: 400px) {
+  .bottomNav {
+    height: 48px;
+  }
+}
+
+@media (min-width: 1025px) {
+  .bottomNav {
+    position: fixed;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 80px;
+    height: auto;
+    background: rgba(255, 255, 255, 0.1); /* Напівпрозорий фон */
+    backdrop-filter: blur(10px);
+    padding: 15px 0;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    align-items: center;
+  }
+
+  .navIcon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: rgba(10, 10, 35, 1);
+    font-size: 14px;
+    transition: all 0.3s ease;
+    padding: 10px;
+    border-radius: 8px;
+  }
+
+  .navIcon:hover {
+    transform: translateX(5px);
+    background: rgba(92, 143, 180, 0.2);
+    color: rgb(92, 143, 180);
+  }
+
+  .isActive {
+    background: rgba(92, 143, 180, 0.2); /* Підсвічування */
+    color: rgb(92, 143, 180);
+    border-left: 4px solid rgb(92, 143, 180); /* Додаємо лівий бордер */
+    padding-left: 6px; /* Щоб іконка трохи зсунулася */
+  }
+
+  .icon {
+    font-size: 30px;
+  }
 }

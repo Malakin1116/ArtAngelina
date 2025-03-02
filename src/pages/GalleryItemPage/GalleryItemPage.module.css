@@ -110,14 +110,72 @@
   margin-right: 10px;
   margin-bottom: 10px;
 }
-.priceContainer:hover {
-  transform: scale(1.05);
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
-}
 
 .cartIcon {
   font-size: 44px;
   color: rgba(10, 10, 35, 1);
+}
+
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  pointer-events: none; /* ❗ Блокує кліки поза модалкою */
+}
+
+.modalContent {
+  position: relative;
+  max-width: 90%;
+  max-height: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 12px;
+  pointer-events: all; /* ❗ Дозволяє кліки тільки всередині */
+}
+
+.modalImage {
+  max-width: 95vw; /* Обмеження по ширині */
+  max-height: 100vh; /* Обмеження по висоті вікна */
+  object-fit: contain; /* Масштабує без обрізання */
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.closeButton {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: rgba(0, 0, 0, 0.6);
+  border: none;
+  cursor: pointer;
+  font-size: 28px;
+  color: white;
+  border-radius: 25%;
+  transition: all 0.2s ease;
+  z-index: 1001;
+}
+
+body.modal-open {
+  overflow: hidden;
+}
+
+.closeButton:hover {
+  color: red;
+}
+
+.image {
+  cursor: pointer;
+  transition: transform 0.3s ease;
 }
 
 @media (max-width: 400px) {
@@ -136,5 +194,52 @@
   }
   .navContainer {
     margin-bottom: 0px;
+  }
+}
+
+.closeButton {
+  top: 5px;
+  right: 10px;
+  font-size: 28px;
+  padding: 15px;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+@media (min-width: 768px) {
+  .itemContainer {
+    width: 500px;
+  }
+  .image {
+    width: 500px;
+    height: 500px;
+    border-radius: 10px 10px 0 0;
+  }
+  .priceContainer {
+    width: 100%;
+    max-width: 250px;
+  }
+  .closeButton {
+    font-size: 36px;
+  }
+}
+
+@media (min-width: 1025px) {
+  .closeButton {
+    font-size: 36px;
+  }
+  .container {
+    padding-top: 0px;
+  }
+  .itemContainer {
+    width: 600px;
+  }
+  .image {
+    width: 600px;
+    height: 600px;
+    border-radius: 10px 10px 0 0;
+  }
+  .priceContainer {
+    width: 100%;
+    max-width: 250px;
   }
 }
