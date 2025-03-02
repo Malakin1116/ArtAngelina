@@ -18,15 +18,15 @@ export default function CartPage() {
     confirmAlert({
       overlayClassName: "react-confirm-alert-overlay",
       customUI: ({ onClose }) => (
-        <div className="custom-confirm-modal">
+        <div className={css.customConfirmModal}>
           <h1>Remove Item</h1>
           <p>
             Are you sure you want to remove <strong>{item.title}</strong> from
             the cart?
           </p>
-          <div className="modal-buttons">
+          <div className={css.modalButtons}>
             <button
-              className="confirm-btn"
+              className={css.confirmBtn}
               onClick={() => {
                 dispatch(removeFromCart(id));
                 toast.info(`${item.title} removed from cart`);
@@ -35,7 +35,7 @@ export default function CartPage() {
             >
               Yes, Remove
             </button>
-            <button className="cancel-btn" onClick={onClose}>
+            <button className={css.cancelBtn} onClick={onClose}>
               Cancel
             </button>
           </div>
@@ -60,7 +60,7 @@ export default function CartPage() {
     <div className={css.container}>
       <ToastContainer position="top-right" style={{ marginTop: "48px" }} />
       {cart.length === 0 ? (
-        <div>
+        <div className={css.cart}>
           <p className={css.message}>Your cart is currently empty.</p>
           <div className={css.illustration}></div>
         </div>

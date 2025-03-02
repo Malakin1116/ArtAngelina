@@ -124,31 +124,18 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.9);
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 1000;
 }
 
-.react-confirm-alert-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(255, 155, 155, 0.6);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 2000;
-}
-
 .custom-confirm-modal {
   background: #ffffff;
   padding: 25px;
   border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.9);
   text-align: center;
   width: 320px;
   position: relative;
@@ -172,14 +159,27 @@
   line-height: 1.4;
 }
 
-.modal-buttons {
+.modalButtons {
   display: flex;
   justify-content: center;
   gap: 15px;
   width: 100%;
 }
 
-.confirm-btn {
+.customConfirmModal {
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.9);
+  text-align: center;
+  width: 320px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.confirmBtn {
   background: #dc3545;
   color: white;
   border: none;
@@ -192,12 +192,12 @@
   width: 120px;
 }
 
-.confirm-btn:hover {
+.confirmBtn:hover {
   background: #c82333;
   transform: scale(1.05);
 }
 
-.cancel-btn {
+.cancelBtn {
   background: #6c757d;
   color: white;
   border: none;
