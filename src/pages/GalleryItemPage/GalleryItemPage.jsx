@@ -3,9 +3,11 @@ import { useDispatch } from "react-redux";
 import { addToCart } from "../../redux/cart/slice";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { useState, useEffect } from "react";
 import css from "./GalleryItemPage.module.css";
 import { NavLink } from "react-router-dom";
 import { MdAddShoppingCart } from "react-icons/md";
+import { IoMdClose } from "react-icons/io"; // Іконка закриття
 
 const images = [
   {
@@ -69,6 +71,20 @@ export default function GalleryItemPage() {
   const dispatch = useDispatch();
   const image = images.find((img) => img.id === parseInt(id));
 
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  // Блокуємо прокрутку сторінки при відкритті модалки
+  useEffect(() => {
+    if (isModalOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [isModalOpen]);
+
   if (!image) {
     return <p>Item not found</p>;
   }
@@ -98,7 +114,12 @@ export default function GalleryItemPage() {
         </NavLink>
       </div>
       <div className={css.itemContainer}>
-        <img src={image.src} alt={image.alt} className={css.image} />
+        <img
+          src={image.src}
+          alt={image.alt}
+          className={css.image}
+          onClick={() => setIsModalOpen(true)}
+        />
         <h2 className={css.titleItem}>{image.title}</h2>
         <p className={css.description}>{image.description}</p>
         <span className={css.spanCart}>
@@ -112,6 +133,21 @@ export default function GalleryItemPage() {
           </button>
         </span>
       </div>
+
+      {isModalOpen && (
+        <div className={css.modalOverlay}>
+          <div className={css.modalContent}>
+            <button
+              className={css.closeButton}
+              onClick={() => setIsModalOpen(false)}
+              aria-label="Close modal"
+            >
+              <IoMdClose className={css.closeIcon} />
+            </button>
+            <img src={image.src} alt={image.alt} className={css.modalImage} />
+          </div>
+        </div>
+      )}
     </div>
   );
 }

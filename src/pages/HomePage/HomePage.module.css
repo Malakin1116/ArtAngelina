@@ -104,3 +104,58 @@
     margin-bottom: 10px;
   }
 }
+
+@media (min-width: 768px) {
+  .imageWrapper {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 15px;
+    overflow: hidden;
+    margin-bottom: 20px;
+  }
+
+  .artistPhoto {
+    width: 100%;
+    max-height: 400px;
+    border-radius: 15px;
+    object-fit: cover;
+  }
+  .socialButtons {
+    display: grid;
+    font-family: "Kefa", "Merriweather", "Georgia", sans-serif;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 25px;
+  }
+  .galleryButton {
+    padding: 12px 25px;
+  }
+}
+
+@media (min-width: 1025px) {
+  .imageWrapper {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 15px;
+    overflow: hidden;
+    margin-bottom: 20px;
+  }
+
+  .artistPhoto {
+    width: 100%;
+    max-height: 500px;
+  }
+  .socialButtons {
+    width: 100%;
+    max-width: 500px;
+    margin-bottom: 25px;
+  }
+  .galleryButton {
+    padding: 15px 30px;
+  }
+  .container {
+    padding-top: 0px;
+  }
+}
