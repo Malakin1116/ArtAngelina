@@ -47,7 +47,7 @@ export default function HomePage() {
           <FaTelegramPlane className={css.icon} /> Telegram
         </a>
         <a
-          href="https://www.tiktok.com/@yourtiktokprofile"
+          href="https://www.tiktok.com/@angelina_and_mr.tomas?_t=ZM-8uLHrLexpMU&_r=1"
           target="_blank"
           rel="noopener noreferrer"
           className={css.button}
