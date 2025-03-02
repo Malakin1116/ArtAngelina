@@ -1,12 +1,12 @@
 import { useParams } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import { addToCart } from "../../redux/cart/slice";
+import { useDispatch, useSelector } from "react-redux";
+import { addToCart, removeFromCart } from "../../redux/cart/slice";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useState, useEffect } from "react";
 import css from "./GalleryItemPage.module.css";
 import { NavLink } from "react-router-dom";
-import { MdAddShoppingCart } from "react-icons/md";
+import { MdAddShoppingCart, MdRemoveShoppingCart } from "react-icons/md"; // Іконка видалення
 import { IoMdClose } from "react-icons/io"; // Іконка закриття
 
 const images = [
@@ -71,9 +71,11 @@ export default function GalleryItemPage() {
   const dispatch = useDispatch();
   const image = images.find((img) => img.id === parseInt(id));
 
+  const cartItems = useSelector((state) => state.cart.items);
+  const isInCart = cartItems.some((item) => item.id === image?.id);
+
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  // Блокуємо прокрутку сторінки при відкритті модалки
   useEffect(() => {
     if (isModalOpen) {
       document.body.style.overflow = "hidden";
@@ -89,16 +91,14 @@ export default function GalleryItemPage() {
     return <p>Item not found</p>;
   }
 
-  const handleAddToCart = () => {
-    dispatch(
-      addToCart({
-        id: image.id,
-        title: image.title,
-        price: image.price,
-        src: image.src,
-      })
-    );
-    toast.success(`${image.title} added to cart!`);
+  const handleCartAction = () => {
+    if (isInCart) {
+      dispatch(removeFromCart(image.id));
+      toast.info(`${image.title} removed from cart!`);
+    } else {
+      dispatch(addToCart(image));
+      toast.success(`${image.title} added to cart!`);
+    }
   };
 
   return (
@@ -124,12 +124,20 @@ export default function GalleryItemPage() {
         <p className={css.description}>{image.description}</p>
         <span className={css.spanCart}>
           <button
-            className={css.priceContainer}
-            onClick={handleAddToCart}
-            aria-label="Add to cart"
+            className={`${css.priceContainer} ${
+              isInCart ? css.removeFromCart : css.addToCart
+            }`}
+            onClick={handleCartAction}
+            aria-label={isInCart ? "Remove from cart" : "Add to cart"}
           >
             <span className={css.price}>{image.price}</span>
-            <MdAddShoppingCart className={css.cartIcon} />
+            {isInCart ? (
+              <MdRemoveShoppingCart
+                className={`${css.cartIcon} ${css.removeIcon}`}
+              />
+            ) : (
+              <MdAddShoppingCart className={`${css.cartIcon} ${css.addIcon}`} />
+            )}
           </button>
         </span>
       </div>
