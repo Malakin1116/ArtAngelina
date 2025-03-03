@@ -19,8 +19,8 @@ export default function CartPage() {
       overlayClassName: "react-confirm-alert-overlay",
       customUI: ({ onClose }) => (
         <div className={css.customConfirmModal}>
-          <h1>Remove Item</h1>
-          <p>
+          <h3 className={css.customH3}>Remove Item</h3>
+          <p className={css.customP}>
             Are you sure you want to remove <strong>{item.title}</strong> from
             the cart?
           </p>

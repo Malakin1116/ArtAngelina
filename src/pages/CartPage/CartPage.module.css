@@ -216,6 +216,13 @@
   background: #5a6268;
 }
 
+.customH3 {
+  color: rgb(44, 38, 38);
+}
+.customP {
+  color: rgb(44, 38, 38);
+}
+
 @media (min-width: 768px) {
   .cart {
     width: 500px;

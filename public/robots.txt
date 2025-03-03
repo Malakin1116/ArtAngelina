@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /cart/
+Disallow: /profile/
+Allow: /gallery/
+Allow: /gallery/*
+Sitemap: https://artangelina.com/sitemap.xml
